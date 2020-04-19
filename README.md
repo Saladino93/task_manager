@@ -31,7 +31,7 @@ Then you define a Manager. A Manager basically takes your Tasks and execute them
 
 T2 = tm.Task('T2', label = 'Input 2', function = Identity, args = {'a': 53})
 
-T3 = tm. Task('T3', label = 'Adding), function = Add)
+T3 = tm. Task('T3', label = 'Adding', function = Add)
 
 M = tm.Manager(name = 'MakeAdd')
 
@@ -41,7 +41,7 @@ M += T3
 
 graph = {'T3': {'a': 'T1', 'b': 'T2'},   #for the graph you have to define the inputs. Here we have to edges.
           'T2': {},
-          'T3': {}}
+          'T1': {}}
 
 end = 'T3' #the end of the graph, as this is a graph with a flow
 
@@ -54,7 +54,7 @@ result, lista = M.analyse_graph(graph, end)
 M.plot_graph(graph)
 
 #Executes
-M.execute()
+M.execute(verbose = False)
 
 #Results are store in
 print(M.T3.result)
