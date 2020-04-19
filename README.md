@@ -27,7 +27,7 @@ T1 = tm.Task('T1', label = 'Input 1', function = Identity, args = {'a': 2})
 
 Then you define a Manager. A Manager basically takes your Tasks and execute them in a predefined order dictaded by a graph.
 
-'''python
+```python
 
 T2 = tm.Task('T2, label = 'Input 2', function = Identity, args = {'a': 53})
 
@@ -58,4 +58,4 @@ M.execute()
 
 #Results are store in
 print(M.T3.result)
-'''
+```
